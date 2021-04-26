@@ -1,0 +1,28 @@
+<div class="bg-info p-5 rounded-lg m-3">
+  <h1 class="display-4">Bem-vindo ao Blog do Node</h1>
+  <p class="lead">Blog criado utilizando Node JS, BootStrap, Express, Mongoose e Passport.</p>
+  <hr class="my-4">
+  <p>Crie Postagens sendo Admin ou apenas visualize elas como usuário normal  </p>
+  <a class="btn btn-primary btn-lg" href="/usuarios/registro" role="button">Crie uma conta</a>
+</div>
+<hr>
+
+<H2>Postagens recentes: </H2>
+
+
+{{#each postagens}}
+<div class="card mt-4">
+    <div class="card-body"> 
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
+        <hr>
+        <small>Categoria: {{categoria.nome}}</small> <br>
+        <small>Data de publicação{{data}}</small>
+      
+    </div>
+</div>
+
+{{else}}
+    <h5>Nenhuma postagem</h5>
+{{/each}}
